@@ -39,7 +39,9 @@ public class Tekst extends Innlegg {
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
 			
-		throw new UnsupportedOperationException(TODO.method());
-				
+		String htmlTekst = "\n<h2>" + super.getBruker() + "@" + super.getDato() + " [" + super.getLikes() + "] </h2>\n"
+		+ "<p>" + tekst + "</p>\n";
+		
+		return htmlTekst;
 	}
 }

@@ -34,7 +34,10 @@ public class Bilde extends Tekst {
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		String htmlBilde = "\n<h2>" + super.getBruker() + "@" + super.getDato() + " [" + super.getLikes() + "] </h2>\n"
+		+ "<p>" + super.getTekst() + "</p>\n" + "<iframe src=\"" + url + "\" height=600 width=800></iframe><hr>\n";
+		
+		return htmlBilde;
 				
 	}
 }

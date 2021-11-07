@@ -8,7 +8,7 @@ import no.hvl.dat100.jplab11.oppgave3.*;
 
 public class SkrivBlogg {
 
-	public static boolean skriv(Blogg samling, String mappe, String filnavn) throws FileNotFoundException {
+	public static boolean skriv(Blogg samling, String mappe, String filnavn) {
 		
 		boolean written = false;
 		PrintWriter writer = null;

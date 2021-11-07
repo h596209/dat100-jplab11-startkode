@@ -20,40 +20,58 @@ public class LesBlogg {
 	private static String TEKST = "TEKST";
 	private static String BILDE = "BILDE";
 
-	public static Blogg les(String mappe, String filnavn) throws NumberFormatException, IOException {
+	public static Blogg les(String mappe, String filnavn) {
 
 		BufferedReader br = null;
 		Blogg blogg = null;
-		String line;
-		
+
 		try {
 			br = new BufferedReader(new FileReader(mappe + filnavn));
-			int lineCount = 1;
 			
-			if (lineCount == 1) {
-				int antall = Integer.parseInt(br.readLine());
-				blogg = new Blogg(antall);
-				lineCount++;
-			}
+			int antall = Integer.parseInt(br.readLine());
+			blogg = new Blogg(antall);
 			
-			while ((line = br.readLine()) != null) {
-				if (line.equals(TEKST)) {
-					do {
-						
-					} while (!line.equals(TEKST) || !line.equals(BILDE));
+			for (int i = 0; i < antall; i++) {
+
+				String type = br.readLine();
+
+				if (type.equals(TEKST)) {
+					int id = Integer.parseInt(br.readLine());
+					String bruker = br.readLine();
+					String dato = br.readLine();
+					int likes = Integer.parseInt(br.readLine());
+					String tekst = br.readLine();
+					Innlegg tekstInnlegg = new Tekst(id, bruker, dato, likes, tekst);
+					blogg.leggTil(tekstInnlegg);
+				} else if (type.equals(BILDE)) {
+					int id = Integer.parseInt(br.readLine());
+					String bruker = br.readLine();
+					String dato = br.readLine();
+					int likes = Integer.parseInt(br.readLine());
+					String tekst = br.readLine();
+					String url = br.readLine();
+					Innlegg bildeInnlegg = new Bilde(id, bruker, dato, likes, tekst, url);
+					blogg.leggTil(bildeInnlegg);
 				}
+
 			}
-			
-			
+
+			return blogg;
+
 		} catch(FileNotFoundException fnf) {
 			fnf.getStackTrace();
 		} catch (IOException ioe) {
 			ioe.getStackTrace();
 		} finally {
-			if (br != null)
-				br.close();
+			if (br != null) {
+				try {
+					br.close();
+				} catch(IOException io) {
+					io.getStackTrace();
+				}
+			}
+				
 		}
-		
 		return blogg;
 	}
 }
