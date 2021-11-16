@@ -97,7 +97,7 @@ public class Blogg {
 		int index = finnInnlegg(innlegg);
 		if (index >= 0) {
 			innleggstabell[index] = null;
-			for (int i = index; i < nesteledige; i++) {
+			for (int i = index; i < nesteledige-1; i++) {
 				innleggstabell[index] = innleggstabell[index+1];
 			}
 			nesteledige -= 1;
