@@ -1,4 +1,4 @@
-# Oblig 3
+# DAT100 Oblig 3
 
 ## Gruppemedlemmer:
 - Bjørn Egil Øygarden
