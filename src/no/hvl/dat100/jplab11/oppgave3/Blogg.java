@@ -2,6 +2,8 @@ package no.hvl.dat100.jplab11.oppgave3;
 
 import no.hvl.dat100.jplab11.common.TODO;
 import no.hvl.dat100.jplab11.oppgave1.*;
+import no.hvl.dat100.jplab11.oppgave2.Bilde;
+import no.hvl.dat100.jplab11.oppgave2.Tekst;
 
 public class Blogg {
 
@@ -60,8 +62,9 @@ public class Blogg {
 	}
 	
 	public String toString() {
-		String tekst = "" + (nesteledige) + "\n";
+		String tekst = nesteledige + "\n";
 		for (int i = 0; i < nesteledige; i++) {
+			
 			tekst += innleggstabell[i].toString();
 		}
 		return tekst;

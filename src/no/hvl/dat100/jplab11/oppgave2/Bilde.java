@@ -27,17 +27,13 @@ public class Bilde extends Tekst {
 
 	@Override
 	public String toString() {
-		return "BILDE\n" +  super.getId() + "\n" + super.getBruker() + "\n" + super.getDato() + "\n" + super.getLikes() + "\n" + super.getTekst() + "\n" + url + "\n";
-
+		return "BILDE\n" + super.toString().substring(6) + url + "\n";
 	}
 
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
 		
-		String htmlBilde = "\n<h2>" + super.getBruker() + "@" + super.getDato() + " [" + super.getLikes() + "] </h2>\n"
-		+ "<p>" + super.getTekst() + "</p>\n" + "<iframe src=\"" + url + "\" height=600 width=800></iframe><hr>\n";
-		
-		return htmlBilde;
+		return super.toHTML() + "<iframe src=\"" + url + "\" height=600 width=800></iframe><hr>\n";
 				
 	}
 }
