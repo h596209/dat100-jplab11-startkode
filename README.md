@@ -6,5 +6,5 @@
 - Lars Magnus Nordeide
 
 ## Kjørte tester
-![bilde](https://user-images.githubusercontent.com/89018956/141974097-d4cf73f9-ec80-4324-aff6-fbc8958e151d.png)
+![bilde](https://user-images.githubusercontent.com/89018956/142381815-c92a5fb7-230a-43d5-b6cc-2e6ea4cfc360.png)
 
