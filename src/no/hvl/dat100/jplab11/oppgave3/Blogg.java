@@ -64,7 +64,7 @@ public class Blogg {
 	public String toString() {
 		String tekst = nesteledige + "\n";
 		for (int i = 0; i < nesteledige; i++) {
-			
+
 			tekst += innleggstabell[i].toString();
 		}
 		return tekst;
@@ -113,7 +113,23 @@ public class Blogg {
 	
 	public int[] search(String keyword) {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		int[] tab;
+		int antall = 0;
+		for (int i = 0; i < nesteledige; i++) {
+			if (innleggstabell[i].toString().contains(keyword)) {
+				antall++;
+			}
+		}
 
+		tab = new int[antall];
+		antall = 0;
+
+		for (int i = 0; i < tab.length; i++) {
+			if (innleggstabell[i].toString().contains(keyword)) {
+				tab[antall] = innleggstabell[i].getId();
+				antall++;
+			}
+		}
+		return tab;
 	}
 }
